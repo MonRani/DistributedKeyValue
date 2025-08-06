@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  server-a:
+    build: .
+    container_name: server-a
+    command: ["java", "-cp", "src", "ServerA"]
+
+  server-b:
+    build: .
+    container_name: server-b
+    command: ["java", "-cp", "src", "ServerB"]
+
+  server-c:
+    build: .
+    container_name: server-c
+    command: ["java", "-cp", "src", "ServerC"]
+
+  server-d:
+    build: .
+    container_name: server-d
+    command: [ "java", "-cp", "src", "ServerD" ]
+
+  server-e:
+    build: .
+    container_name: server-e
+    command: [ "java", "-cp", "src", "ServerE" ]
+
+  client:
+    build: .
+    container_name: key-store-client
+    command: ["java", "-cp", "src", "KeyStoreClient", "localhost", "Server1"]
